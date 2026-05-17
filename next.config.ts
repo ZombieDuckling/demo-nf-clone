@@ -1,7 +1,25 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  turbopack: {
+    root: __dirname,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.public.blob.vercel-storage.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'videodelivery.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'imagedelivery.net',
+      },
+    ],
+  },
+}
 
-export default nextConfig;
+export default nextConfig
